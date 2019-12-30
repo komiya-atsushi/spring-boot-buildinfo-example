@@ -1,15 +1,23 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
 }
 
 group 'me.k11i'
-version '1.0-SNAPSHOT'
+version '1.0.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.2.2.RELEASE')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+}
+
+springBoot {
+    buildInfo()
 }
